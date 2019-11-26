@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>....</h2>
+
+<button onclick="myFunction()" style="font-size : 40px">RUT THAM</button>
+<button onclick="myFunction2()" style="font-size : 40px">STOP</button>
+
+<p id="demo"></p>
+
+<script>
+
+function myFunction2() {
+  alert("Hello! I am an alert box!");
+}
+
+
+function myFunction() {
+	var x = Math.floor(Math.random() * 200) + 1;
+    x = pad(x, 3);
+	document.getElementById("demo").innerHTML = x;
+    document.getElementById("demo").style.fontSize = "5cm";
+    document.getElementById("demo").style.color = "red";
+    document.getElementById("demo").style.border = "thick solid #0000FF";
+    document.getElementById("demo").style.backgroundColor = "yellow";
+    setTimeout(arguments.callee, 100);   
+}
+
+function pad(n, width, z) {
+  z = z || '0';
+  n = n + '';
+  return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
+}
+</script>
+
+<style>
+p {
+  max-width: 300px;
+  min-width: 100px;
+  fontSize : 80px;
+}
+
+</body>
+</html>
